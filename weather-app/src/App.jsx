@@ -14,7 +14,9 @@ function App() {
     <>
     <h1>Weather App</h1>
      <CityList onClickCity={setChosenCity}></CityList>
-     <CityForecast city={chosenCity} ></CityForecast>
+     {chosenCity && (
+        <CityForecast city={chosenCity} onBack={() => setChosenCity(null)} />
+      )}
     </>
   )
 }
