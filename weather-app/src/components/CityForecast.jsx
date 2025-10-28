@@ -30,14 +30,22 @@ return (
 <div>
       <h2><strong>{city}</strong></h2>
       <p><strong>{data.summary}</strong></p>
-      <button onClick={scrollToDetails}>View Details</button>
+    { data.details && (
+      <button onClick={scrollToDetails}>View Details</button>)
+    }
       <button onClick={onBack} style={{ marginLeft: "10px" }}>
         Back
       </button>
-
-          <div ref={detailsRef} style={{ marginTop: "20px" }}>
+    
+          <div ref={detailsRef} style={{
+    marginTop: "20px",
+    minHeight: "00px",
+    border: "2px dashed blue", 
+    padding: "10px"
+  }}>
         <p>{data.details}</p>
       </div>
+      
     </div>
 )
 }
